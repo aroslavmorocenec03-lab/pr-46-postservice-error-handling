@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:5211
+
+### Сервер зупинено: відповіді HTTP немає, помилка з’єднання
+GET {{baseUrl}}/postings

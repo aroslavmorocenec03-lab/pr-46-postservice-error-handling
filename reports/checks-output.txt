@@ -1,0 +1,20 @@
+PASS: Усі п’ять методів: HTTP-методи, адреси, DTO та 204 без JSON
+PASS: 400: власний виняток з усіма помилками полів
+PASS: 404: зберігається StatusCode
+PASS: 500: зберігається StatusCode, помилка не приховується
+PASS: 503: зберігається StatusCode
+PASS: Мережевий збій: StatusCode залишається null
+PASS: Успішний HTTP із некоректним JSON: JsonException
+PASS: JSON null замість DTO: JsonException
+PASS: 400 без errors не маскується під валідацію
+PASS: 400 з некоректним JSON: JsonException
+PASS: Тайм-аут HttpClient не губиться у перетворенні статусів
+PASS: Діагностика: час, тип, причина, стек і InnerException
+PASS: LIVE: список, створення, читання, оновлення, видалення
+PASS: LIVE: серверні помилки валідації 400
+PASS: LIVE: 404 при GET, PUT та DELETE відсутнього запису
+PASS: LIVE: реальний сервер повертає 500
+PASS: LIVE: реальний сервер повертає 503
+PASS: LIVE: помилковий JSON від сервера
+
+Успішно: 18/18

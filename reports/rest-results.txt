@@ -1,0 +1,36 @@
+Файл: postservice.rest
+Час: 2026-10-25T20:08:28.5676228+02:00
+
+GET http://localhost:5211/postings
+HTTP 200
+[{"id":1,"from":"Рівне","to":"Луцьк","content":"Книги","deliveryType":0,"weight":2.5,"width":20,"height":10,"depth":30,"value":500,"price":85},{"id":2,"from":"Київ","to":"Львів","content":"Одяг","deliveryType":1,"weight":1.2,"width":25,"height":12,"depth":35,"value":1200,"price":110},{"id":3,"from":"Одеса","to":"Дніпро","content":"Подарунок","deliveryType":0,"weight":0.8,"width":15,"height":15,"depth":20,"value":750,"price":90}]
+
+GET http://localhost:5211/postings/999999
+HTTP 404
+{"message":"Відправлення не знайдено."}
+
+POST http://localhost:5211/postings
+HTTP 400
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"From":["Введіть текст від 1 до 200 символів."],"To":["Введіть текст від 1 до 200 символів."],"Content":["Введіть текст від 1 до 200 символів."],"Weight":["Значення має бути більшим за нуль."],"Width":["Значення має бути більшим за нуль."],"Height":["Значення має бути більшим за нуль."],"Depth":["Значення має бути більшим за нуль."],"Value":["Оголошена вартість не може бути від’ємною."],"Price":["Ціна не може бути від’ємною."]},"traceId":"00-7944c86c3e5cb510c3835f1323095f45-9401c4789c82345c-00"}
+
+PUT http://localhost:5211/postings/999999
+HTTP 404
+
+DELETE http://localhost:5211/postings/999999
+HTTP 404
+
+POST http://localhost:5211/__demo/fault/500
+HTTP 200
+{"mode":"500"}
+
+GET http://localhost:5211/postings
+HTTP 500
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.6.1","title":"An error occurred while processing your request.","status":500,"traceId":"00-4addd94d13e1c489a416f10d03fdffb3-ec5f5a83b2294927-00"}
+
+POST http://localhost:5211/__demo/fault/none
+HTTP 200
+{"mode":"none"}
+
+GET http://localhost:5211/postings
+HTTP 200
+[{"id":1,"from":"Рівне","to":"Луцьк","content":"Книги","deliveryType":0,"weight":2.5,"width":20,"height":10,"depth":30,"value":500,"price":85},{"id":2,"from":"Київ","to":"Львів","content":"Одяг","deliveryType":1,"weight":1.2,"width":25,"height":12,"depth":35,"value":1200,"price":110},{"id":3,"from":"Одеса","to":"Дніпро","content":"Подарунок","deliveryType":0,"weight":0.8,"width":15,"height":15,"depth":20,"value":750,"price":90}]

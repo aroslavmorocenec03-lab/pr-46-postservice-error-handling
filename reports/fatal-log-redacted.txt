@@ -1,0 +1,19 @@
+[2026-10-26T01:17:22.7485543+02:00]
+Тип: System.Net.Http.HttpRequestException
+Повідомлення: Сервер повернув помилку 500.
+Повний виняток і стек:
+System.Net.Http.HttpRequestException: Сервер повернув помилку 500.
+   at PostService.Client.PostServiceClient.EnsureSuccessAsync(HttpResponseMessage response) in <project>\src\PostService.Client\PostServiceClient.cs:line 64
+   at PostService.Client.PostServiceClient.GetPostingsAsync() in <project>\src\PostService.Client\PostServiceClient.cs:line 23
+   at PostService.WindowsApp.PostingList.<ReloadAsync>b__7_0() in <project>\src\PostService.WindowsApp\PostingList.cs:line 59
+   at PostService.WindowsApp.RetryOperation.RunAsync(IWin32Window owner, Func`1 operation) in <project>\src\PostService.WindowsApp\RetryOperation.cs:line 11
+   at PostService.WindowsApp.PostingList.ReloadAsync() in <project>\src\PostService.WindowsApp\PostingList.cs:line 57
+   at PostService.WindowsApp.PostingList.<.ctor>b__5_0() in <project>\src\PostService.WindowsApp\PostingList.cs:line 32
+   at PostService.WindowsApp.PostingList.<>c__DisplayClass6_0.<<AddButton>b__0>d.MoveNext() in <project>\src\PostService.WindowsApp\PostingList.cs:line 48
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()

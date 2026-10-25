@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/PostService.Contracts/PostService.Contracts.csproj" />
+  <Project Path="src/PostService.Client/PostService.Client.csproj" />
+  <Project Path="src/PostService.Server/PostService.Server.csproj" />
+  <Project Path="src/PostService.WindowsApp/PostService.WindowsApp.csproj" />
+  <Project Path="tests/PostService.Checks/PostService.Checks.csproj" />
+</Solution>

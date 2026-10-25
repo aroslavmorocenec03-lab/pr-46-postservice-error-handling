@@ -1,0 +1,5 @@
+Файл: server-stopped.rest
+Час: 2026-10-26T01:16:21.5534760+02:00
+
+GET http://localhost:5211/postings
+TIMEOUT: The request was canceled due to the configured HttpClient.Timeout of 3 seconds elapsing.
